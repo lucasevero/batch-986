@@ -1,0 +1,23 @@
+# db/seeds.rb
+Tag.destroy_all if Rails.env.development?
+
+names = %w(Fruit\ tree Cactus Greasy\ plant Flower Ferns Conifers)
+
+names.each do |name|
+  Tag.create!(name: name)
+end
+
+
+# gardens/show
+<div class="card-tags">
+  <% plant.tags.each do |tag| %>
+    <span><%= tag.name %></span>
+  <% end %>
+  <%= link_to "+", new_plant_plant_tag_path(plant) %>
+</div>
+
+
+
+
+# tom select class
+@import "tom-select/dist/css/tom-select.css";
